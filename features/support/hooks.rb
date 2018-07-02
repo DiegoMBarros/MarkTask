@@ -28,3 +28,12 @@ After ('@perfil_logout') do
     @perfil = PerfilPage.new
     @perfil.nav.bye
 end
+
+After do |scenario|
+# puts scenario.name -> função para pegar o nome do cenário
+nome_cenario = scenario.name.tr(' ','_').downcase!
+nome_cenario = nome_cenario.gsub(/([_@#!%()\-=;><,{}\~\[\]\.\/\?\"\*\^\$\+\-]+)/, '') #3h32 aula 4
+screenshot = "logs/shots/#{nome_cenario}.png"
+page.save_screenshot(screenshot)
+embed(screenshot, 'image/png', 'Clique aqui para ver a evidência!')
+end
