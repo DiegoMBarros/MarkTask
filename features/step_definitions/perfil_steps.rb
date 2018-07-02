@@ -26,9 +26,9 @@ end
 #upload
 
 Dado("que eu tenho uma foto muito bonita") do
-    # @minha_foto = File.join(Dir.pwd, 'features/support/fixtures/al.jpg')
+    @minha_foto = File.join('C:/Git/Mark-Task/features/support/fixtures/al.jpg')
     # @minha_foto = File.join(Dir.pwd, '/features/support/fixtures/AlElric.jpg')
-    @minha_foto = File.join(Dir.pwd, 'features/support/fixtures/elrics.jpg')
+    # @minha_foto = "C:/Git/Mark-Task/features/support/fixtures/elrics.jpg"
 end
   
 Quando("faço o upload da minha foto") do
