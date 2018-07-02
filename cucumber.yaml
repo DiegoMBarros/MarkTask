@@ -1,0 +1,8 @@
+---
+default: --format progress -p html -p headless #-> Informar qual navegador aqui para que os testes sejam executados
+html: --format html --out=logs/features.html
+# navegadores:
+chrome: BROWSER=chrome
+firefox: BROWSER=firefox
+chrome_headless: BROWSER=chrome_headless
+headless: HEADLESS=phantomjs
