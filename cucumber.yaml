@@ -1,5 +1,5 @@
 ---
-default: --format progress -p html -p headless #-> Informar qual navegador aqui para que os testes sejam executados
+default: --format progress -p html -p chrome #-> Informar qual navegador aqui para que os testes sejam executados
 html: --format html --out=logs/features.html
 # navegadores:
 chrome: BROWSER=chrome
