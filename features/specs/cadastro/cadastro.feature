@@ -5,7 +5,7 @@ Funcionalidade: Cadastro
 	Posso fazer meu cadastro no sistema
 	Para poder gerenciar as minhas tarefas
 
-   @cadastro @excluir_cadastro @logout @smoke
+   @cadastro @logout @smoke
 	Cenário: Cadastro simplificado
 
         Dado que eu acessei a página de cadastro
