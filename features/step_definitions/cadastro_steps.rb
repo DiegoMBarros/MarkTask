@@ -5,6 +5,7 @@
     
     E('possuo os seguintes dados:') do |table|
         @cadastro = table.rows_hash
+        @helpers.back_to_the_past(@cadastro['Email'])
     end
     
     Quando('faço o meu cadastro') do
