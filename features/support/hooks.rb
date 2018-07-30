@@ -1,9 +1,14 @@
-Before ('@excluir_cadastro') do 
-    visit 'https://marktasks.herokuapp.com/api/reset/diegomacedo@qaninja.io?clean=full'
+# Before ('@excluir_cadastro') do 
+#     HTTParty.get('https://marktasks.herokuapp.com/api/reset/diegomacedo@qaninja.io?clean=full')
+# end
 
+Before do
     @login = LoginPage.new
     @tasks = TarefasPage.new
     @perfil = PerfilPage.new
+    @nav = Navbar.new
+    
+    @helpers = Helpers.new
 
     page.current_window.resize_to(1280, 800)
 end
@@ -14,7 +19,7 @@ Before('@auth') do
     
     @login.load
     @login.logar('diegomacedo@qaninja.io', '123456')
-    sleep 5
+    sleep 4
 end
 
 After ('@logout') do

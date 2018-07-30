@@ -4,6 +4,7 @@ require 'capybara/cucumber'
 require 'capybara/poltergeist'
 require 'site_prism'
 require 'faker'
+require 'httparty'
 
 $env = ENV['BROWSER']
 $headless = ENV['HEADLESS']
