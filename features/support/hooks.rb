@@ -16,9 +16,13 @@ end
 Before('@auth') do
     @login = LoginPage.new
     @tasks = TarefasPage.new
-    
+    @helpers = Helpers.new
+
+    @email = 'diegomacedo@qaninja.io'
+    @senha = '123456'    
     @login.load
-    @login.logar('diegomacedo@qaninja.io', '123456')
+    @login.logar(@email, @senha)
+    @token = @helpers.login(@email, @senha) #-> Comando para logar via api
     sleep 4
 end
 
