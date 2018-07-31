@@ -1,6 +1,7 @@
 Dado("que eu tenho uma tarefa com os atributos:") do |table|
     @tarefa = table.rows_hash
-    @tarefa['titulo'] = "#{@tarefa['titulo']} - #{Faker::Lorem.characters(10)}"
+    # @tarefa['titulo'] = "#{@tarefa['titulo']} - #{Faker::Lorem.characters(10)}"
+    @helpers.remover_tarefa(@token, @tarefa['titulo'])
 end
 
 Dado("quero taguear esta tarefa com:") do |table|
