@@ -14,7 +14,9 @@ Dado("eu já tinha cadastrado esta tarefa e não tinha percebido") do
 end
 
 Quando("faço o cadastro desta tarefa") do
+    sleep 2
     @tasks.botao_novo.click
+    sleep 2
     @tasks.adicionar.nova(@tarefa, @tags)
 end
   
