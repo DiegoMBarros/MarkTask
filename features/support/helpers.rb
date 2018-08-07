@@ -23,16 +23,24 @@ class Helpers
         @tasks = result.parsed_response['data']
         # puts @tasks = result.parsed_response['data'].class #-> Para descobrir o titulo.
 
-        @tasks.each do |t|
-            @id_para_remover = t['_id'] if t['title'] == titulo
-        end
-            # puts @id_para_remover
-        # @tarefa = @tasks.select { |t| t['title'] == titulo }.first #-> outra maneira de selecionar o item da lista
+        #Usar esse código:
+        # @tasks.each do |t|
+        #     @id_para_remover = t['_id'] if t['title'] == titulo
+        # end
         
+        # HTTParty.delete(
+        #     'https://marktasks.herokuapp.com/api/tasks/' + @id_para_remover,
+        #     headers: @headers
+        # )
+            #Ou esse:
+        @tarefa = @tasks.select { |t| t['title'] == titulo }
+        
+        if @tarefa.size > 0
         HTTParty.delete(
-            'https://marktasks.herokuapp.com/api/tasks/' + @id_para_remover, #-> Se optar pela opção comentada, então o id deve ser declarado assim "@tarefa['_id']"
+            'https://marktasks.herokuapp.com/api/tasks/' + @tarefa.first['_id'],
             headers: @headers
         )
+        end
     end
     
 
